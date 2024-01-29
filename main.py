@@ -7,9 +7,8 @@ def write_name(name, x_coord, y_coord):
     show_state.hideturtle()
     show_state.penup()
     show_state.color("black")
+    show_state.goto(x=int(x_coord), y=int(y_coord))
     show_state.write(arg=name, font=("Arial", 10, "normal"), align="center")
-    show_state.goto(x=x_coord, y=y_coord)
-    print(x_coord, y_coord)
 
 
 screen = turtle.Screen()
@@ -30,7 +29,6 @@ for name in state_names:
         answer_to_print = state_list[state_names == name]
         x_coord = answer_to_print['x']
         y_coord = answer_to_print['y']
-        print(x_coord, y_coord)
         write_name(name, x_coord, y_coord)
 
 
